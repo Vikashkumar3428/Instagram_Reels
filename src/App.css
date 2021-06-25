@@ -23,19 +23,22 @@ html{
     position: relative;
     height: 65vh;
     background-color: white;
-    width: 20vw;
+    /* width: 400px; */
+    width: 40vw;
     border-radius: 20px solid black;
-    /* max-width: 450px;
-    max-width: 1200px; */
+    position: relative; 
+    right: 0; 
+    bottom: 0; 
+    /* min-height: 100%; */
     overflow: auto;
     scroll-snap-type: y mandatory;
 } 
 .app__videos::-webkit-scrollbar{
     display: none;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 400px) {
     .app__videos{
-        width: 35vw;
+        width: 70vw;
     }
   }
  

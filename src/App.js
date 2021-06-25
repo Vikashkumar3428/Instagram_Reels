@@ -1,6 +1,15 @@
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import VideoCard from './components/VideoCard';
+import db from './components/Firebase';
 function App() {
+  const [reels, setReels] = useState([]);
+
+  useEffect(()=>{
+    db.collection('reels').onSnapshot(snapshot => (
+      setReels(snapshot.docs.map(doc => doc.data()))
+    ))
+  },[])
   return (
     <div className="app">
       <div className="app__top">
@@ -12,17 +21,21 @@ function App() {
         
       </div>
       <div className="app__videos">
+        {reels.map(reel => (
           <VideoCard 
-          channel = "Channel Name"
-          avatarSrc='http://www.zooniverse.org/assets/simple-avatar.png'
-          song = "Test Song - ssssangha"
-          url='https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'
-          likes = {950}
-          shares = {30}
+          channel = {reel.channel}
+          avatarSrc= {reel.avatarSrc}
+          song = {reel.song}
+          url= {reel.url}
+          likes = {reel.likes}
+          shares = {reel.shares}
           />
+        ))}
+          
       </div>
     </div>
   );
 }
+
 
 export default App;

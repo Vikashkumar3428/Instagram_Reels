@@ -27,6 +27,7 @@
 .videoFooter__actions {
     display: flex;
     position: absolute;
+    flex-direction: row;
     width:95%;
     color: rgb(255, 255, 255);
     justify-content: space-between;   
@@ -50,19 +51,6 @@
     margin-left: 3px;
 }
 
-
-.videoFooter__ticker {
-    height: fit-content;
-    margin-left: 30px;
-    margin-bottom: 20px;
-    width:60%;
-}
-
-.videoFooter__ticker h1{
-    padding-top: 7px;
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-}
 
 .videoFooter__icon{
     position: absolute;

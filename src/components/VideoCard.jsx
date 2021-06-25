@@ -21,7 +21,7 @@ function VideoCard({ url, likes, shares, channel, avatarSrc, song }) {
     }
     return (
         <div className='videoCard'>
-           <VideoHeader/>
+           <VideoHeader />
            <video
             ref = {videoRef}
             onClick={onVideoPress}
@@ -30,8 +30,7 @@ function VideoCard({ url, likes, shares, channel, avatarSrc, song }) {
             alt="IG reel video" 
             loop
             />
-            <VideoHeader
-            />
+            {/* <VideoHeader /> */}
             <VideoFooter
              channel = {channel}
              likes = {likes}
